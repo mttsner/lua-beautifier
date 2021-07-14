@@ -1,3 +1,3 @@
 # lua beautifier 
 
-Binds [LuaUtil]() Beautify command to VSCode's format functionality. 
+Binds [LuaUtil](https://github.com/notnoobmaster/luautil) Beautify command to VSCode's format functionality. 
