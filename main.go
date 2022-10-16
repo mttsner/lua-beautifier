@@ -4,17 +4,16 @@ import (
 	"strings"
 	"syscall/js"
 
-	"github.com/notnoobmaster/luautil"
+	"github.com/notnoobmaster/luautil/parse"
 )
 
 func beautify(this js.Value, inputs []js.Value) interface{} {
-	inp := inputs[0]
-	str := inp.JSValue().String()
-	ret, err := luautil.Beautify(strings.NewReader(str))
+	str := inputs[0].JSValue().String()
+	chunk, err := parse.Parse(strings.NewReader(str), "")
 	if err != nil {
 		return str
 	}
-	return ret
+	return chunk.String()
 }
 
 func main() {

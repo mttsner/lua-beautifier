@@ -10,12 +10,12 @@ module.exports = {
 		const buf = new Uint8Array(file)
 
 		WebAssembly.instantiate(buf, go.importObject)
-		.then(result => {
-			go.run(result.instance)
-			context.subscriptions.push(languages.registerDocumentFormattingEditProvider("lua", {
-				provideDocumentFormattingEdits: document => [TextEdit.replace(new Range(document.lineAt(0).range.start, document.lineAt(document.lineCount - 1).range.end), Beautify(document.getText()))]
-			}))
-		})
+			.then(result => {
+				go.run(result.instance)
+				context.subscriptions.push(languages.registerDocumentFormattingEditProvider("lua", {
+					provideDocumentFormattingEdits: document => [TextEdit.replace(new Range(document.lineAt(0).range.start, document.lineAt(document.lineCount - 1).range.end), Beautify(document.getText()))]
+				}))
+			})
 	},
 	deactivate: () => { }
 };
