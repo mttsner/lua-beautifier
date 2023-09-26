@@ -8,7 +8,7 @@ import (
 )
 
 func beautify(this js.Value, inputs []js.Value) interface{} {
-	str := inputs[0].JSValue().String()
+	str := inputs[0].String()
 	chunk, err := parse.Parse(strings.NewReader(str), "")
 	if err != nil {
 		return str
