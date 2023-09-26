@@ -6,7 +6,7 @@
         {
             "label": "Build",
             "type": "shell",
-            "command": "go build -o ./main.wasm",
+            "command": "go build -trimpath -o ./main.wasm",
             "options": {
                 "env": {
                     "GOOS": "js",

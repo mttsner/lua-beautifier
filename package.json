@@ -5,7 +5,7 @@
 	"publisher": "notnoobmaster",
 	"author": "notnoobmaster",
 	"icon": "icon.png",
-	"version": "1.1.7",
+	"version": "1.1.8",
 	"engines": {
 		"vscode": "^1.53.0"
 	},
