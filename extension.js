@@ -1,3 +1,15 @@
+// Polyfills for wasm_exec.js
+if (!globalThis.crypto) {
+	const crypto = require("crypto").webcrypto;
+	globalThis.crypto = crypto;
+}
+
+if (!globalThis.TextEncoder) {
+	const te = require("text-encoding-polyfill");
+	globalThis.TextEncoder = te.TextEncoder;
+	globalThis.TextDecoder = te.TextDecoder;
+}
+
 const { languages, Range, TextEdit } = require("vscode");
 const { readFileSync } = require('fs');
 const { resolve } = require('path');
